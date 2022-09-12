@@ -1,4 +1,7 @@
 /*! Desktop Mode View */
+/* *{
+    border: solid 2px red;
+} */
 /** Page Structures */
 a,
 img {
@@ -11,16 +14,15 @@ a {
     color: unset;
 }
 
+a,
+p {
+    font-family: var(--font-tertiary);
+}
+
 body {
     font-family: var(--font-secondary);
     background-color: var(--color-primary);
     color: var(--color-secondary);
-}
-
-html {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: auto;
 }
 
 footer {
@@ -29,13 +31,29 @@ footer {
     color: var(--footer);
 }
 
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+}
+
 /** Selector (Class) */
+.card {
+    z-index: 1;
+    position: absolute;
+    right: 75px;
+    bottom: 50px;
+    padding: 1.25rem;
+    background-color: var(--color-primary);
+}
+
 .container {
     margin: 2rem 3rem;
 }
 
 .designer {
-    width: 10%;
+    width: 25%;
+    height: 5%;
     border-radius: 100%;
 }
 
@@ -62,6 +80,7 @@ footer {
 .logo {
     padding: 0.5rem;
     border: 2px solid var(--color-secondary);
+    font-family: var(--font-primary);
 }
 
 .mt-5 {
@@ -89,6 +108,7 @@ footer {
 }
 
 .navbar a.active {
+    font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 0.5rem;
     color: var(--color-secondary);
@@ -96,35 +116,6 @@ footer {
 
 .navbar .icon {
     display: none;
-}
-
-@media screen and (max-width: 600px) {
-    .navbar a:not(:first-child) {
-        display: none;
-    }
-
-    .navbar a.icon {
-        float: right;
-        display: block;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .navbar.responsive {
-        position: relative;
-    }
-
-    .navbar.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .navbar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
 }
 
 /** Pseudo-classes */
@@ -166,7 +157,46 @@ a:hover {
 @media screen and (max-width: 768px) {
 
     /** Selector (Class) */
+    .card {
+        width: 65%;
+        right: 40px;
+    }
+
     .container {
         margin: 1rem;
+    }
+
+    .hero {
+        width: unset;
+    }
+
+    .navbar a {
+        display: none;
+    }
+
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+
+    .navbar.responsive {
+        position: relative;
+    }
+
+    .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar.responsive a {
+        float: none;
+        display: grid;
+        text-align: center;
+    }
+
+    /** Selector (ID) */
+    #content {
+        flex-direction: column;
     }
 }
